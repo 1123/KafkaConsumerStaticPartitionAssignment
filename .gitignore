@@ -1,0 +1,7 @@
+target
+*.iml
+.idea
+src/test/resources/consumer.properties
+src/main/resources/consumer.properties
+src/main/resources/producer.properties
+src/test/resources/consumer.properties
