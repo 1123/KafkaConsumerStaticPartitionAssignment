@@ -1,4 +1,4 @@
-package io.confluent.examples.offsetrest
+package io.confluent.examples.scala.assigningconsumer
 
 import org.apache.kafka.common.TopicPartition
 import com.fasterxml.jackson.core
