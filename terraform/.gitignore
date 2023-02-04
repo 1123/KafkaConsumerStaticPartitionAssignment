@@ -1,0 +1,4 @@
+terraform.tfstate
+env.sh
+.terraform
+terraform.tfstate.backup
