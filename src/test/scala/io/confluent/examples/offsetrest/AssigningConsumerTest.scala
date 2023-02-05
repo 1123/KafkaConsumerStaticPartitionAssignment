@@ -1,8 +1,6 @@
 package io.confluent.examples.scala.assigningconsumer
 
 import org.apache.kafka.common.TopicPartition
-import com.fasterxml.jackson.core
-import com.fasterxml.jackson.core.`type`.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
@@ -22,7 +20,5 @@ class AssigningConsumerTest extends AnyFlatSpec {
     val topicPartitions = AssigningConsumer.topicPartitions(parsedPartitions)
     println(topicPartitions)
   }
-
-
 
 }
