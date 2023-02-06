@@ -1,6 +1,6 @@
 package io.confluent.examples.scala.assigningconsumer
 
-import java.beans.BeanProperty
+import scala.beans.BeanProperty
 
 case class TrackEvent(
                        @BeanProperty eventId: Int,
