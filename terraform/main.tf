@@ -17,7 +17,7 @@ resource "confluent_environment" "benedikt-tf" {
 }
 
 resource "confluent_kafka_cluster" "basic" {
-  display_name = "assiging-consumer-test"
+  display_name = "assigning-consumer-test"
   availability = "SINGLE_ZONE"
   cloud        = "AWS"
   region       = "us-east-2"
