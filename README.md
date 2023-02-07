@@ -9,9 +9,9 @@ Finally, it allows to automatically react to a changing number of partitions of 
 
 However, in some cases automatic partition assignment using consumer groups does not 
 give enough control over the consumer application. 
-This may be the case when the throughput over different partitions or different topics varies, and one wishes to group partitions with high throughput together with parittions of lower throughput, such that sum of throughput over the assigned partitions of a consumer instance is even across consumer instances. 
+This may be the case when the throughput over different partitions or different topics varies, and one wishes to group partitions with high throughput together with partitions of lower throughput, such that the sum of throughput over the assigned partitions of a consumer instance is relatively even across consumer instances. 
 
-This can be achieved using manual partition assignment using the Kafka consumer assign API. This repository shows an example of how to do this using Scala. Since the Scala code is using the Kafka Java client libraries, this can be done in a very simlar fashion also with Java. 
+This can be achieved using manual partition assignment using the Kafka consumer assign API. This repository shows an example of how this could be implemented with Scala. Since the Scala code is using the Kafka Java client libraries, a Java implementation is even somewhat more straight-forward. 
 
 ### Overview Diagram
 
@@ -31,10 +31,21 @@ This demo runs with Confluent Cloud, but it can also run against any other Kafka
 
 #### Running the Demo:
 
-* Execute terrafrom in the terrafrom subfolder: `terraform apply`. This will require you to log into your Confluent Cloud account and set up the required resources. 
+* Execute terrafrom in the `terraform` subfolder: 
+  * `terraform apply`
+  This will require you to log into your Confluent Cloud account and set up the required resources. 
 * Take note of the generated API Key and the bootstrap servers endpoint. 
-* Use this information to create files  `src/main/resources/producer.properties` and `src/main/resources/consumer.properties` from the corresponding template files in the same directory. 
-* Run the DeliveryProducer, OrderProducer and TrackEventProducer main classes to populate the created topics. 
+* Use this information to create files
+  * `src/main/resources/producer.properties` and 
+  * `src/main/resources/consumer.properties` 
+  from the corresponding template files in the same directory. 
+* Compile the code: 
+  * `mvn clean compile` 
+* Run the DeliveryProducer, OrderProducer and TrackEventProducer main classes to populate the created topics:
+  * `./run-delivery-producer.sh`
+  * `./run-order-produer.sh`
+  * `./run-track-event-producer.sh`
+  
 * Run three instances of the consumer application by executing the scripts `run-consumer-{1,2,3}.sh`; each in a separate terminal window. 
   The consumers will read their parition assignments from the environement variable `ASSIGNED_PARTITIONS` and consume from exactly those partitions. 
   You can manually reassign partitions to different consumer instances by modifiying this variable for each consumer and restart the consumers. 
