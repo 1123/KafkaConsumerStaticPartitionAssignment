@@ -15,5 +15,5 @@ This can be achieved using manual partition assignment using the Kafka consumer 
 
 The following diagram gives an overview over the demo:
 
-[Static Partition Assignment with the Kafka Consumer Assign API](KafkaConsumerStaticPartitionAssignment.png)
+![Static Partition Assignment with the Kafka Consumer Assign API](KafkaConsumerStaticPartitionAssignment.png)
 
