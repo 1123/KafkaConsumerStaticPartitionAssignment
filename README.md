@@ -7,7 +7,7 @@ It also allows to scale up or down instances in case the current number of insta
 less than or more than needed. 
 Finally, it allows to automatically react to a changing number of partitions of a topic. 
 
-However, in some cases automatic partition assignment using consumer groups does not 
+However, in some cases, automatic partition assignment using Kafka consumer groups does not 
 give enough control over the consumer application. 
 This may be the case when the throughput over different partitions or different topics varies, and one wishes to group partitions with high throughput together with partitions of lower throughput, such that the sum of throughput over the assigned partitions of a consumer instance is relatively even across consumer instances. 
 
