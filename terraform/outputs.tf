@@ -1,7 +1,12 @@
 output "resource-ids" {
   value = <<-EOT
-  Environment ID:   ${confluent_environment.benedikt-tf.id}
+  Environment ID:   ${confluent_environment.benedikt-tf.id} 
   EOT
+}
+
+output "kafka-cluster" {
+  description = "Bootstrap Servers of Kafka Cluster"
+  value = confluent_kafka_cluster.basic.bootstrap_endpoint
 }
 
 output "api-key" {
