@@ -35,6 +35,10 @@ This demo runs with Confluent Cloud, but it can also run against any other Kafka
   * `terraform apply`
   This will require you to log into your Confluent Cloud account and set up the required resources. 
 * Take note of the generated API Key and the bootstrap servers endpoint. 
+  The credentials will also be stored in the terraform state file `terraform.tfstate` together with other useful information
+  such as the bootstrap servers url.
+  Be sure to __not__ add this file to version control. 
+  You can see the credentials using the following command: `terraform output -json`.
 * Use this information to create files
   * `src/main/resources/producer.properties` and 
   * `src/main/resources/consumer.properties` 
